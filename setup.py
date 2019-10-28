@@ -1,10 +1,18 @@
 import PyPDF2
 import os
 from pdfnup import generateNup
+from Tkinter import *
 
-filename = raw_input("Please enter the filename: ")
+from Tkinter import *
+import Tkinter, Tkconstants, tkFileDialog
 
-pdf_in = open(filename, 'rb')
+root = Tk()
+root.title("Python PDF Rotate'n'Print")
+
+root.mainloop()
+root.filename = tkFileDialog.askopenfilename(initialdir = "/",title = "Select file",filetypes = (("pdf files","*.pdf"),("all files","*.*")))
+
+pdf_in = open(root.filename, 'rb')
 
 print('Found PDF, executing...')
 print('Step 1 of 2: Rotating')
