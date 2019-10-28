@@ -2,9 +2,12 @@ import PyPDF2
 import os
 from pdfnup import generateNup
 
+filename = raw_input("Please enter the filename: ")
+
+pdf_in = open(filename, 'rb')
+
 print('Found PDF, executing...')
 print('Step 1 of 2: Rotating')
-pdf_in = open('original.pdf', 'rb')
 pdf_reader = PyPDF2.PdfFileReader(pdf_in)
 pdf_writer = PyPDF2.PdfFileWriter()
 
